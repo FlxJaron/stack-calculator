@@ -12,3 +12,10 @@
 
 # Project-local glide cache, RE: https://github.com/Masterminds/glide/issues/736
 .glide/
+
+# Ignore binary
+stack-calculator
+
+# Ignore IntelliJ project files
+stack-calculator.iml
+.idea/

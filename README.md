@@ -4,7 +4,7 @@ Code assignment for a Stack Calculator in Go
 ## Build
 1) export GOPATH=\`pwd\`
 2) go get github.com/gorilla/mux
-3) `go build .`
+3) go build .
 
 The mux dependency is necessary for dynamic parameters in the router paths like `{id}` and `{number}`
 
@@ -18,7 +18,7 @@ To run the application, you can execute the binary after following the build ste
 
 ## Endpoints
 All HTTP endpoints listen on GET requests by default on port `8080`.
-The endpoints provide operations that work on a set of stack calculator. The parameter `:id` must be an integer (`[0-9]+`) at all times.
+The endpoints provide operations that work on a set of stack calculator. The parameter `{id}` must be an integer (`[0-9]+`) at all times.
 
 #### `/calc/{id}/peek` 
 - Returns stack[top]
@@ -29,26 +29,26 @@ The endpoints provide operations that work on a set of stack calculator. The par
 - Returns the new stack[top]
 - Returns `InvalidNumberException` when `{number}` is not a valid float
  
-#### `/calc/:id/pop`
+#### `/calc/{id}/pop`
 - Returns the top from the stack and removes it
 - Returns `StackUnderflow` when the stack is empty
  
-#### `/calc/:id/add`
+#### `/calc/{id}/add`
  - Removes the top and top-1 from the stack and replaces it with stack[top-1]+stack[top]
  - Returns the new stack[top]
  - Returns `StackUnderflow` when the stack contains less than two values
  
-#### `/calc/:id/subtract`
+#### `/calc/{id}/subtract`
  - Removes the top and top-1 from the stack and replaces it with stack[top-1]-stack[top]
  - Returns the new stack[top]
  - Returns `StackUnderflow` when the stack contains less than two values
  
-#### `/calc/:id/multiply`
+#### `/calc/{id}/multiply`
  - Removes the top and top-1 from the stack and replaces it with stack[top-1]*stack[top]
  - Returns the new stack[top]
  - Returns `StackUnderflow` when the stack contains less than two values
  
-#### `/calc/:id/divide`
+#### `/calc/{id}/divide`
  - Removes the top and top-1 from the stack and replaces it with stack[top-1]/stack[top]
  - Returns the new stack[top]
  - Returns `StackUnderflow` when the stack contains less than two values
